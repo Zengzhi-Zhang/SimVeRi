@@ -1,0 +1,1663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-12-24 14:43:53 by Eclipse SUMO duarouter Version 1.14.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="sumo/Town05.net.xml"/>
+        <route-files value="sumo/simveri.rou.xml"/>
+    </input>
+
+    <output>
+        <output-file value="sumo/validated.rou.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="vehicle.mini.cooper_s_base" length="4.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0000" type="vehicle.mini.cooper_s_base" depart="0.00" color="9,15,17">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vType id="vehicle.jeep.wrangler_rubicon_occ" length="5.00" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0000" type="vehicle.jeep.wrangler_rubicon_occ" depart="0.00" color="14,8,26">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.lincoln.mkz_2020_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0001" type="vehicle.lincoln.mkz_2020_occ" depart="0.80" color="0,1,9">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.jeep.wrangler_rubicon_base" length="5.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0001" type="vehicle.jeep.wrangler_rubicon_base" depart="1.50" color="38,143,43">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.audi.a2_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0002" type="vehicle.audi.a2_occ" depart="1.60" color="43,56,41">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.carlamotors.carlacola_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0003" type="vehicle.carlamotors.carlacola_occ" depart="2.40" color="254,235,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.nissan.patrol_2021_base" length="5.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0002" type="vehicle.nissan.patrol_2021_base" depart="3.00" color="43,43,64">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.audi.etron_occ" length="5.00" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0004" type="vehicle.audi.etron_occ" depart="3.20" color="34,48,46">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0005" type="vehicle.audi.etron_occ" depart="4.00" color="52,67,33">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.nissan.patrol_base" length="5.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0003" type="vehicle.nissan.patrol_base" depart="4.50" color="0,27,0">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vType id="vehicle.mini.cooper_s_occ" length="4.00" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0006" type="vehicle.mini.cooper_s_occ" depart="4.80" color="255,235,224">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.nissan.patrol_hard" length="5.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H00_00" type="vehicle.nissan.patrol_hard" depart="5.00" departLane="best" departPos="10.00" departSpeed="0.00" color="133,125,126">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H00_01" type="vehicle.nissan.patrol_hard" depart="5.00" departLane="best" departPos="25.00" departSpeed="0.00" color="133,125,126">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H00_02" type="vehicle.nissan.patrol_hard" depart="5.00" departLane="best" departPos="40.00" departSpeed="0.00" color="133,125,126">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H00_03" type="vehicle.nissan.patrol_hard" depart="5.00" departLane="best" departPos="55.00" departSpeed="0.00" color="133,125,126">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H00_04" type="vehicle.nissan.patrol_hard" depart="5.00" departLane="best" departPos="70.00" departSpeed="0.00" color="133,125,126">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0007" type="vehicle.lincoln.mkz_2020_occ" depart="5.60" color="252,255,254">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.lincoln.mkz_2017_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0004" type="vehicle.lincoln.mkz_2017_base" depart="6.00" color="145,117,116">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vType id="vehicle.nissan.patrol_occ" length="5.00" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0008" type="vehicle.nissan.patrol_occ" depart="6.40" color="247,255,227">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.bmw.grandtourer_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0009" type="vehicle.bmw.grandtourer_occ" depart="7.20" color="255,250,254">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.mini.cooper_s_2021_base" length="4.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0005" type="vehicle.mini.cooper_s_2021_base" depart="7.50" color="9,4,28">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.toyota.prius_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0010" type="vehicle.toyota.prius_occ" depart="8.00" color="40,38,56">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.ford.ambulance_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0011" type="vehicle.ford.ambulance_occ" depart="8.80" color="9,8,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.citroen.c3_base" length="4.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0006" type="vehicle.citroen.c3_base" depart="9.00" color="70,49,42">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.audi.tt_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0012" type="vehicle.audi.tt_occ" depart="9.60" color="41,51,44">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0013" type="vehicle.audi.a2_occ" depart="10.40" color="125,132,125">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.volkswagen.t2_base" length="5.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0007" type="vehicle.volkswagen.t2_base" depart="10.50" color="35,25,17">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vType id="vehicle.tesla.model3_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0014" type="vehicle.tesla.model3_occ" depart="11.20" color="227,18,17">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0008" type="vehicle.nissan.patrol_2021_base" depart="12.00" color="25,15,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.volkswagen.t2_occ" length="5.00" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0015" type="vehicle.volkswagen.t2_occ" depart="12.00" color="17,19,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0016" type="vehicle.jeep.wrangler_rubicon_occ" depart="12.80" color="255,245,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.lincoln.mkz_2020_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0009" type="vehicle.lincoln.mkz_2020_base" depart="13.50" color="31,0,0">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vType id="vehicle.seat.leon_occ" length="4.00" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0017" type="vehicle.seat.leon_occ" depart="13.60" color="40,73,210">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.nissan.patrol_2021_occ" length="5.00" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0018" type="vehicle.nissan.patrol_2021_occ" depart="14.40" color="201,190,173">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.audi.a2_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0010" type="vehicle.audi.a2_base" depart="15.00" color="30,35,42">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0019" type="vehicle.mini.cooper_s_occ" depart="15.20" color="119,147,142">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0020" type="vehicle.audi.etron_occ" depart="16.00" color="255,234,233">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.seat.leon_base" length="4.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0011" type="vehicle.seat.leon_base" depart="16.50" color="138,121,138">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0021" type="vehicle.lincoln.mkz_2020_occ" depart="16.80" color="255,243,238">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.mercedes.coupe_2020_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0022" type="vehicle.mercedes.coupe_2020_occ" depart="17.60" color="white">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.mercedes.coupe_2020_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0012" type="vehicle.mercedes.coupe_2020_base" depart="18.00" color="239,244,220">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0023" type="vehicle.audi.a2_occ" depart="18.40" color="148,20,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0024" type="vehicle.tesla.model3_occ" depart="19.20" color="204,50,34">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0013" type="vehicle.nissan.patrol_base" depart="19.50" color="32,18,26">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0025" type="vehicle.ford.ambulance_occ" depart="20.00" color="224,30,13">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0026" type="vehicle.nissan.patrol_occ" depart="20.80" color="255,191,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0014" type="vehicle.lincoln.mkz_2017_base" depart="21.00" color="64,34,42">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0027" type="vehicle.audi.a2_occ" depart="21.60" color="42,34,33">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.chevrolet.impala_occ" length="4.50" minGap="1.50" speedFactor="normc(0.90,0.10,0.70,1.10)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.8" tau="1.2"/>
+    <vehicle id="occ_0028" type="vehicle.chevrolet.impala_occ" depart="22.40" color="236,236,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.mercedes.coupe_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0015" type="vehicle.mercedes.coupe_base" depart="22.50" color="123,138,142">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="occ_0029" type="vehicle.jeep.wrangler_rubicon_occ" depart="23.20" color="61,34,57">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0016" type="vehicle.citroen.c3_base" depart="24.00" color="115,124,137">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0017" type="vehicle.citroen.c3_base" depart="25.50" color="241,249,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.audi.etron_base" length="5.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0018" type="vehicle.audi.etron_base" depart="27.00" color="white">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0019" type="vehicle.citroen.c3_base" depart="28.50" color="202,188,209">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vType id="vehicle.bmw.grandtourer_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0020" type="vehicle.bmw.grandtourer_base" depart="30.00" color="199,173,199">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vType id="vehicle.nissan.patrol_2021_hard" length="5.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H01_00" type="vehicle.nissan.patrol_2021_hard" depart="30.00" departLane="best" departPos="10.00" departSpeed="0.00" color="white">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H01_01" type="vehicle.nissan.patrol_2021_hard" depart="30.00" departLane="best" departPos="25.00" departSpeed="0.00" color="white">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H01_02" type="vehicle.nissan.patrol_2021_hard" depart="30.00" departLane="best" departPos="40.00" departSpeed="0.00" color="white">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H01_03" type="vehicle.nissan.patrol_2021_hard" depart="30.00" departLane="best" departPos="55.00" departSpeed="0.00" color="white">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H01_04" type="vehicle.nissan.patrol_2021_hard" depart="30.00" departLane="best" departPos="70.00" departSpeed="0.00" color="white">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0021" type="vehicle.bmw.grandtourer_base" depart="31.50" color="233,28,48">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0022" type="vehicle.mercedes.coupe_base" depart="33.00" color="229,13,46">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vType id="vehicle.chevrolet.impala_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0023" type="vehicle.chevrolet.impala_base" depart="34.50" color="253,231,232">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0024" type="vehicle.jeep.wrangler_rubicon_base" depart="36.00" color="255,249,255">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0025" type="vehicle.jeep.wrangler_rubicon_base" depart="37.50" color="20,19,0">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0026" type="vehicle.citroen.c3_base" depart="39.00" color="142,225,248">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0027" type="vehicle.chevrolet.impala_base" depart="40.50" color="144,0,0">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0028" type="vehicle.lincoln.mkz_2020_base" depart="42.00" color="190,190,201">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vType id="vehicle.audi.tt_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0029" type="vehicle.audi.tt_base" depart="43.50" color="15,29,0">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0030" type="vehicle.lincoln.mkz_2020_base" depart="45.00" color="58,58,30">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0031" type="vehicle.mini.cooper_s_2021_base" depart="46.50" color="0,1,2">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0032" type="vehicle.mini.cooper_s_base" depart="48.00" color="175,198,198">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0033" type="vehicle.mercedes.coupe_base" depart="49.50" color="148,8,43">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0034" type="vehicle.lincoln.mkz_2020_base" depart="51.00" color="229,252,253">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.tesla.model3_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0035" type="vehicle.tesla.model3_base" depart="52.50" color="33,15,7">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0036" type="vehicle.audi.etron_base" depart="54.00" color="45,57,51">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.bmw.grandtourer_hard" length="4.50" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H02_00" type="vehicle.bmw.grandtourer_hard" depart="55.00" departLane="best" departPos="10.00" departSpeed="0.00" color="127,84,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H02_01" type="vehicle.bmw.grandtourer_hard" depart="55.00" departLane="best" departPos="25.00" departSpeed="0.00" color="127,84,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H02_02" type="vehicle.bmw.grandtourer_hard" depart="55.00" departLane="best" departPos="40.00" departSpeed="0.00" color="127,84,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H02_03" type="vehicle.bmw.grandtourer_hard" depart="55.00" departLane="best" departPos="55.00" departSpeed="0.00" color="127,84,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H02_04" type="vehicle.bmw.grandtourer_hard" depart="55.00" departLane="best" departPos="70.00" departSpeed="0.00" color="127,84,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0037" type="vehicle.jeep.wrangler_rubicon_base" depart="55.50" color="57,39,51">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0038" type="vehicle.lincoln.mkz_2017_base" depart="57.00" color="40,46,44">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0039" type="vehicle.audi.a2_base" depart="58.50" color="252,228,251">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0040" type="vehicle.volkswagen.t2_base" depart="60.00" color="158,10,13">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0041" type="vehicle.mercedes.coupe_base" depart="61.50" color="183,204,175">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0042" type="vehicle.audi.etron_base" depart="63.00" color="37,37,59">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0043" type="vehicle.mini.cooper_s_2021_base" depart="64.50" color="119,0,0">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vType id="vehicle.dodge.charger_2020_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0044" type="vehicle.dodge.charger_2020_base" depart="66.00" color="24,26,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0045" type="vehicle.bmw.grandtourer_base" depart="67.50" color="205,190,186">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0046" type="vehicle.jeep.wrangler_rubicon_base" depart="69.00" color="156,0,0">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0047" type="vehicle.bmw.grandtourer_base" depart="70.50" color="223,255,235">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0048" type="vehicle.bmw.grandtourer_base" depart="72.00" color="123,102,37">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0049" type="vehicle.dodge.charger_2020_base" depart="73.50" color="200,45,29">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0050" type="vehicle.seat.leon_base" depart="75.00" color="38,51,238">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0051" type="vehicle.audi.a2_base" depart="76.50" color="black">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0052" type="vehicle.nissan.patrol_2021_base" depart="78.00" color="white">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0053" type="vehicle.audi.etron_base" depart="79.50" color="206,190,199">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vType id="vehicle.jeep.wrangler_rubicon_hard" length="5.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H03_00" type="vehicle.jeep.wrangler_rubicon_hard" depart="80.00" departLane="best" departPos="10.00" departSpeed="0.00" color="255,232,202">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H03_01" type="vehicle.jeep.wrangler_rubicon_hard" depart="80.00" departLane="best" departPos="25.00" departSpeed="0.00" color="255,232,202">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H03_02" type="vehicle.jeep.wrangler_rubicon_hard" depart="80.00" departLane="best" departPos="40.00" departSpeed="0.00" color="255,232,202">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H03_03" type="vehicle.jeep.wrangler_rubicon_hard" depart="80.00" departLane="best" departPos="55.00" departSpeed="0.00" color="255,232,202">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H03_04" type="vehicle.jeep.wrangler_rubicon_hard" depart="80.00" departLane="best" departPos="70.00" departSpeed="0.00" color="255,232,202">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0054" type="vehicle.dodge.charger_2020_base" depart="81.00" color="255,200,0">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0055" type="vehicle.audi.tt_base" depart="82.50" color="2,3,11">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vType id="vehicle.ford.ambulance_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0056" type="vehicle.ford.ambulance_base" depart="84.00" color="243,255,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0057" type="vehicle.jeep.wrangler_rubicon_base" depart="85.50" color="62,35,33">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0058" type="vehicle.lincoln.mkz_2020_base" depart="87.00" color="238,248,255">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0059" type="vehicle.dodge.charger_2020_base" depart="88.50" color="white">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0060" type="vehicle.chevrolet.impala_base" depart="90.00" color="118,132,127">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.volkswagen.t2_2021_base" length="5.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0061" type="vehicle.volkswagen.t2_2021_base" depart="91.50" color="39,58,33">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0062" type="vehicle.ford.ambulance_base" depart="93.00" color="248,246,253">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0063" type="vehicle.audi.a2_base" depart="94.50" color="237,237,238">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0064" type="vehicle.jeep.wrangler_rubicon_base" depart="96.00" color="147,0,27">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0065" type="vehicle.volkswagen.t2_base" depart="97.50" color="248,255,235">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0066" type="vehicle.nissan.patrol_2021_base" depart="99.00" color="119,114,139">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0067" type="vehicle.nissan.patrol_base" depart="100.50" color="242,247,235">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0068" type="vehicle.volkswagen.t2_base" depart="102.00" color="139,132,132">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0069" type="vehicle.bmw.grandtourer_base" depart="103.50" color="120,212,225">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0070" type="vehicle.jeep.wrangler_rubicon_base" depart="105.00" color="15,20,15">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vType id="vehicle.volkswagen.t2_hard" length="5.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H04_00" type="vehicle.volkswagen.t2_hard" depart="105.00" departLane="best" departPos="10.00" departSpeed="0.00" color="212,202,198">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H04_01" type="vehicle.volkswagen.t2_hard" depart="105.00" departLane="best" departPos="25.00" departSpeed="0.00" color="212,202,198">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H04_02" type="vehicle.volkswagen.t2_hard" depart="105.00" departLane="best" departPos="40.00" departSpeed="0.00" color="212,202,198">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H04_03" type="vehicle.volkswagen.t2_hard" depart="105.00" departLane="best" departPos="55.00" departSpeed="0.00" color="212,202,198">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H04_04" type="vehicle.volkswagen.t2_hard" depart="105.00" departLane="best" departPos="70.00" departSpeed="0.00" color="212,202,198">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0071" type="vehicle.nissan.patrol_2021_base" depart="106.50" color="225,245,232">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0072" type="vehicle.audi.etron_base" depart="108.00" color="2,26,10">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0073" type="vehicle.dodge.charger_2020_base" depart="109.50" color="46,40,57">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0074" type="vehicle.lincoln.mkz_2020_base" depart="111.00" color="253,255,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0075" type="vehicle.mercedes.coupe_base" depart="112.50" color="241,255,227">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0076" type="vehicle.dodge.charger_2020_base" depart="114.00" color="243,254,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0077" type="vehicle.bmw.grandtourer_base" depart="115.50" color="51,34,37">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0078" type="vehicle.volkswagen.t2_base" depart="117.00" color="238,246,238">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0079" type="vehicle.mini.cooper_s_base" depart="118.50" color="18,0,6">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.nissan.micra_base" length="4.00" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0080" type="vehicle.nissan.micra_base" depart="120.00" color="23,30,8">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0081" type="vehicle.audi.etron_base" depart="121.50" color="70,36,35">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0082" type="vehicle.audi.etron_base" depart="123.00" color="241,251,236">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0083" type="vehicle.audi.etron_base" depart="124.50" color="255,253,251">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0084" type="vehicle.dodge.charger_2020_base" depart="126.00" color="115,137,114">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0085" type="vehicle.volkswagen.t2_base" depart="127.50" color="122,133,120">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0086" type="vehicle.mercedes.coupe_2020_base" depart="129.00" color="197,172,193">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vType id="vehicle.mini.cooper_s_2021_hard" length="4.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H05_00" type="vehicle.mini.cooper_s_2021_hard" depart="130.00" departLane="best" departPos="10.00" departSpeed="0.00" color="122,147,142">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H05_01" type="vehicle.mini.cooper_s_2021_hard" depart="130.00" departLane="best" departPos="25.00" departSpeed="0.00" color="122,147,142">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H05_02" type="vehicle.mini.cooper_s_2021_hard" depart="130.00" departLane="best" departPos="40.00" departSpeed="0.00" color="122,147,142">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H05_03" type="vehicle.mini.cooper_s_2021_hard" depart="130.00" departLane="best" departPos="55.00" departSpeed="0.00" color="122,147,142">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H05_04" type="vehicle.mini.cooper_s_2021_hard" depart="130.00" departLane="best" departPos="70.00" departSpeed="0.00" color="122,147,142">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0087" type="vehicle.chevrolet.impala_base" depart="130.50" color="128,116,122">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0088" type="vehicle.bmw.grandtourer_base" depart="132.00" color="255,247,248">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0089" type="vehicle.mercedes.coupe_2020_base" depart="133.50" color="24,27,31">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vType id="vehicle.dodge.charger_police_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0090" type="vehicle.dodge.charger_police_base" depart="135.00" color="255,248,243">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0091" type="vehicle.dodge.charger_2020_base" depart="136.50" color="2,0,147">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0092" type="vehicle.bmw.grandtourer_base" depart="138.00" color="27,23,9">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0093" type="vehicle.nissan.patrol_base" depart="139.50" color="205,207,179">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0094" type="vehicle.audi.etron_base" depart="141.00" color="64,36,67">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0095" type="vehicle.chevrolet.impala_base" depart="142.50" color="210,189,211">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0096" type="vehicle.audi.etron_base" depart="144.00" color="255,252,248">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0097" type="vehicle.audi.etron_base" depart="145.50" color="white">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0098" type="vehicle.dodge.charger_2020_base" depart="147.00" color="25,1,5">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0099" type="vehicle.audi.etron_base" depart="148.50" color="255,255,249">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0100" type="vehicle.volkswagen.t2_base" depart="150.00" color="255,239,255">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0101" type="vehicle.chevrolet.impala_base" depart="151.50" color="232,12,15">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0102" type="vehicle.audi.tt_base" depart="153.00" color="150,11,0">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0103" type="vehicle.audi.tt_base" depart="154.50" color="23,23,2">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vType id="vehicle.seat.leon_hard" length="4.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H06_00" type="vehicle.seat.leon_hard" depart="155.00" departLane="best" departPos="10.00" departSpeed="0.00" color="255,240,237">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H06_01" type="vehicle.seat.leon_hard" depart="155.00" departLane="best" departPos="25.00" departSpeed="0.00" color="255,240,237">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H06_02" type="vehicle.seat.leon_hard" depart="155.00" departLane="best" departPos="40.00" departSpeed="0.00" color="255,240,237">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H06_03" type="vehicle.seat.leon_hard" depart="155.00" departLane="best" departPos="55.00" departSpeed="0.00" color="255,240,237">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H06_04" type="vehicle.seat.leon_hard" depart="155.00" departLane="best" departPos="70.00" departSpeed="0.00" color="255,240,237">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0104" type="vehicle.nissan.patrol_2021_base" depart="156.00" color="155,98,28">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vType id="vehicle.toyota.prius_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0105" type="vehicle.toyota.prius_base" depart="157.50" color="0,2,147">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0106" type="vehicle.jeep.wrangler_rubicon_base" depart="159.00" color="116,10,32">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0107" type="vehicle.audi.a2_base" depart="160.50" color="128,104,24">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0108" type="vehicle.dodge.charger_police_base" depart="162.00" color="231,255,251">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0109" type="vehicle.jeep.wrangler_rubicon_base" depart="163.50" color="236,21,46">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0110" type="vehicle.lincoln.mkz_2020_base" depart="165.00" color="255,255,245">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0111" type="vehicle.audi.a2_base" depart="166.50" color="255,240,239">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0112" type="vehicle.audi.etron_base" depart="168.00" color="white">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0113" type="vehicle.dodge.charger_2020_base" depart="169.50" color="233,237,255">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0114" type="vehicle.jeep.wrangler_rubicon_base" depart="171.00" color="39,64,33">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0115" type="vehicle.audi.a2_base" depart="172.50" color="173,181,191">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0116" type="vehicle.volkswagen.t2_2021_base" depart="174.00" color="0,14,148">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0117" type="vehicle.toyota.prius_base" depart="175.50" color="26,3,0">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0118" type="vehicle.dodge.charger_2020_base" depart="177.00" color="246,255,239">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0119" type="vehicle.nissan.micra_base" depart="178.50" color="212,28,24">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0120" type="vehicle.audi.etron_base" depart="180.00" color="240,255,220">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vType id="vehicle.toyota.prius_hard" length="4.50" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H07_00" type="vehicle.toyota.prius_hard" depart="180.00" departLane="best" departPos="10.00" departSpeed="0.00" color="235,241,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H07_01" type="vehicle.toyota.prius_hard" depart="180.00" departLane="best" departPos="25.00" departSpeed="0.00" color="235,241,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H07_02" type="vehicle.toyota.prius_hard" depart="180.00" departLane="best" departPos="40.00" departSpeed="0.00" color="235,241,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H07_03" type="vehicle.toyota.prius_hard" depart="180.00" departLane="best" departPos="55.00" departSpeed="0.00" color="235,241,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H07_04" type="vehicle.toyota.prius_hard" depart="180.00" departLane="best" departPos="70.00" departSpeed="0.00" color="235,241,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0121" type="vehicle.volkswagen.t2_base" depart="181.50" color="26,156,52">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0122" type="vehicle.citroen.c3_base" depart="183.00" color="white">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0123" type="vehicle.nissan.patrol_base" depart="184.50" color="186,211,177">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0124" type="vehicle.mercedes.coupe_base" depart="186.00" color="41,72,237">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0125" type="vehicle.toyota.prius_base" depart="187.50" color="120,133,144">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0126" type="vehicle.nissan.patrol_2021_base" depart="189.00" color="203,211,172">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0127" type="vehicle.mercedes.coupe_2020_base" depart="190.50" color="243,255,255">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0128" type="vehicle.volkswagen.t2_2021_base" depart="192.00" color="118,142,138">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0129" type="vehicle.ford.ambulance_base" depart="193.50" color="255,255,254">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0130" type="vehicle.jeep.wrangler_rubicon_base" depart="195.00" color="30,40,52">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0131" type="vehicle.dodge.charger_police_base" depart="196.50" color="239,248,255">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0132" type="vehicle.audi.etron_base" depart="198.00" color="3,2,140">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0133" type="vehicle.nissan.micra_base" depart="199.50" color="31,43,67">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0134" type="vehicle.volkswagen.t2_base" depart="201.00" color="white">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0135" type="vehicle.tesla.model3_base" depart="202.50" color="203,33,38">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0136" type="vehicle.audi.a2_base" depart="204.00" color="124,140,117">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vType id="vehicle.audi.etron_hard" length="5.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="2.00" height="1.80" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H08_00" type="vehicle.audi.etron_hard" depart="205.00" departLane="best" departPos="10.00" departSpeed="0.00" color="35,72,209">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H08_01" type="vehicle.audi.etron_hard" depart="205.00" departLane="best" departPos="25.00" departSpeed="0.00" color="35,72,209">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H08_02" type="vehicle.audi.etron_hard" depart="205.00" departLane="best" departPos="40.00" departSpeed="0.00" color="35,72,209">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H08_03" type="vehicle.audi.etron_hard" depart="205.00" departLane="best" departPos="55.00" departSpeed="0.00" color="35,72,209">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H08_04" type="vehicle.audi.etron_hard" depart="205.00" departLane="best" departPos="70.00" departSpeed="0.00" color="35,72,209">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0137" type="vehicle.tesla.model3_base" depart="205.50" color="5,9,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0138" type="vehicle.mercedes.coupe_2020_base" depart="207.00" color="white">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0139" type="vehicle.jeep.wrangler_rubicon_base" depart="208.50" color="13,14,25">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0140" type="vehicle.jeep.wrangler_rubicon_base" depart="210.00" color="252,194,3">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0141" type="vehicle.audi.tt_base" depart="211.50" color="123,146,147">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0142" type="vehicle.bmw.grandtourer_base" depart="213.00" color="225,34,24">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0143" type="vehicle.jeep.wrangler_rubicon_base" depart="214.50" color="201,35,35">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0144" type="vehicle.toyota.prius_base" depart="216.00" color="125,138,142">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0145" type="vehicle.volkswagen.t2_base" depart="217.50" color="108,117,139">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0146" type="vehicle.nissan.patrol_base" depart="219.00" color="130,193,251">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0147" type="vehicle.volkswagen.t2_2021_base" depart="220.50" color="157,17,7">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0148" type="vehicle.mercedes.coupe_base" depart="222.00" color="6,0,24">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0149" type="vehicle.jeep.wrangler_rubicon_base" depart="223.50" color="202,193,191">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0150" type="vehicle.audi.tt_base" depart="225.00" color="39,54,213">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0151" type="vehicle.mini.cooper_s_2021_base" depart="226.50" color="62,64,55">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0152" type="vehicle.audi.tt_base" depart="228.00" color="33,36,58">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0153" type="vehicle.chevrolet.impala_base" depart="229.50" color="white">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vType id="vehicle.citroen.c3_hard" length="4.00" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H09_00" type="vehicle.citroen.c3_hard" depart="230.00" departLane="best" departPos="10.00" departSpeed="0.00" color="255,255,254">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H09_01" type="vehicle.citroen.c3_hard" depart="230.00" departLane="best" departPos="25.00" departSpeed="0.00" color="255,255,254">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H09_02" type="vehicle.citroen.c3_hard" depart="230.00" departLane="best" departPos="40.00" departSpeed="0.00" color="255,255,254">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H09_03" type="vehicle.citroen.c3_hard" depart="230.00" departLane="best" departPos="55.00" departSpeed="0.00" color="255,255,254">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H09_04" type="vehicle.citroen.c3_hard" depart="230.00" departLane="best" departPos="70.00" departSpeed="0.00" color="255,255,254">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0154" type="vehicle.jeep.wrangler_rubicon_base" depart="231.00" color="237,235,241">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0155" type="vehicle.mini.cooper_s_base" depart="232.50" color="252,255,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0156" type="vehicle.dodge.charger_2020_base" depart="234.00" color="255,255,253">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0157" type="vehicle.bmw.grandtourer_base" depart="235.50" color="250,232,239">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0158" type="vehicle.nissan.patrol_base" depart="237.00" color="223,27,18">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0159" type="vehicle.chevrolet.impala_base" depart="238.50" color="29,67,221">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0160" type="vehicle.toyota.prius_base" depart="240.00" color="255,232,234">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0161" type="vehicle.dodge.charger_2020_base" depart="241.50" color="182,178,191">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0162" type="vehicle.audi.a2_base" depart="243.00" color="8,0,5">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0163" type="vehicle.bmw.grandtourer_base" depart="244.50" color="222,252,251">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0164" type="vehicle.tesla.model3_base" depart="246.00" color="153,212,215">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0165" type="vehicle.bmw.grandtourer_base" depart="247.50" color="28,74,235">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0166" type="vehicle.mini.cooper_s_2021_base" depart="249.00" color="47,144,52">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0167" type="vehicle.ford.ambulance_base" depart="250.50" color="white">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0168" type="vehicle.audi.etron_base" depart="252.00" color="255,241,236">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0169" type="vehicle.bmw.grandtourer_base" depart="253.50" color="255,255,244">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0170" type="vehicle.chevrolet.impala_base" depart="255.00" color="134,6,10">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="H10_00" type="vehicle.jeep.wrangler_rubicon_hard" depart="255.00" departLane="best" departPos="10.00" departSpeed="0.00" color="255,247,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H10_01" type="vehicle.jeep.wrangler_rubicon_hard" depart="255.00" departLane="best" departPos="25.00" departSpeed="0.00" color="255,247,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H10_02" type="vehicle.jeep.wrangler_rubicon_hard" depart="255.00" departLane="best" departPos="40.00" departSpeed="0.00" color="255,247,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H10_03" type="vehicle.jeep.wrangler_rubicon_hard" depart="255.00" departLane="best" departPos="55.00" departSpeed="0.00" color="255,247,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H10_04" type="vehicle.jeep.wrangler_rubicon_hard" depart="255.00" departLane="best" departPos="70.00" departSpeed="0.00" color="255,247,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0171" type="vehicle.audi.etron_base" depart="256.50" color="249,255,231">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0172" type="vehicle.mercedes.coupe_2020_base" depart="258.00" color="255,250,255">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0173" type="vehicle.mercedes.coupe_2020_base" depart="259.50" color="41,40,36">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0174" type="vehicle.chevrolet.impala_base" depart="261.00" color="153,16,18">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0175" type="vehicle.volkswagen.t2_base" depart="262.50" color="33,69,209">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0176" type="vehicle.tesla.model3_base" depart="264.00" color="61,61,50">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0177" type="vehicle.nissan.patrol_base" depart="265.50" color="3,0,26">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0178" type="vehicle.seat.leon_base" depart="267.00" color="37,38,56">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0179" type="vehicle.audi.a2_base" depart="268.50" color="46,56,68">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0180" type="vehicle.chevrolet.impala_base" depart="270.00" color="144,77,25">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0181" type="vehicle.volkswagen.t2_2021_base" depart="271.50" color="111,128,135">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0182" type="vehicle.ford.ambulance_base" depart="273.00" color="126,144,113">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0183" type="vehicle.nissan.patrol_2021_base" depart="274.50" color="white">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0184" type="vehicle.tesla.model3_base" depart="276.00" color="34,64,39">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0185" type="vehicle.chevrolet.impala_base" depart="277.50" color="white">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0186" type="vehicle.nissan.patrol_2021_base" depart="279.00" color="43,52,56">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="H11_00" type="vehicle.audi.etron_hard" depart="280.00" departLane="best" departPos="10.00" departSpeed="0.00" color="255,255,230">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H11_01" type="vehicle.audi.etron_hard" depart="280.00" departLane="best" departPos="25.00" departSpeed="0.00" color="255,255,230">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H11_02" type="vehicle.audi.etron_hard" depart="280.00" departLane="best" departPos="40.00" departSpeed="0.00" color="255,255,230">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H11_03" type="vehicle.audi.etron_hard" depart="280.00" departLane="best" departPos="55.00" departSpeed="0.00" color="255,255,230">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H11_04" type="vehicle.audi.etron_hard" depart="280.00" departLane="best" departPos="70.00" departSpeed="0.00" color="255,255,230">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0187" type="vehicle.chevrolet.impala_base" depart="280.50" color="255,235,233">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0188" type="vehicle.chevrolet.impala_base" depart="282.00" color="32,2,20">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0189" type="vehicle.mercedes.coupe_base" depart="283.50" color="41,39,37">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0190" type="vehicle.nissan.patrol_2021_base" depart="285.00" color="1,9,18">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0191" type="vehicle.audi.tt_base" depart="286.50" color="243,255,255">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0192" type="vehicle.jeep.wrangler_rubicon_base" depart="288.00" color="255,255,233">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0193" type="vehicle.nissan.patrol_2021_base" depart="289.50" color="248,255,245">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0194" type="vehicle.audi.etron_base" depart="291.00" color="204,173,202">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0195" type="vehicle.toyota.prius_base" depart="292.50" color="56,51,57">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0196" type="vehicle.mercedes.coupe_2020_base" depart="294.00" color="0,24,13">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0197" type="vehicle.audi.etron_base" depart="295.50" color="123,11,0">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0198" type="vehicle.audi.tt_base" depart="297.00" color="117,199,219">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0199" type="vehicle.audi.tt_base" depart="298.50" color="white">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vType id="vehicle.carlamotors.carlacola_base" length="4.50" minGap="2.50" speedFactor="normc(1.00,0.10,0.80,1.20)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.5" tau="1.0"/>
+    <vehicle id="base_0200" type="vehicle.carlamotors.carlacola_base" depart="300.00" color="11,9,24">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0201" type="vehicle.mini.cooper_s_base" depart="301.50" color="white">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0202" type="vehicle.mini.cooper_s_2021_base" depart="303.00" color="236,255,245">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0203" type="vehicle.volkswagen.t2_base" depart="304.50" color="219,14,15">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="H12_00" type="vehicle.nissan.patrol_2021_hard" depart="305.00" departLane="best" departPos="10.00" departSpeed="0.00" color="47,69,215">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H12_01" type="vehicle.nissan.patrol_2021_hard" depart="305.00" departLane="best" departPos="25.00" departSpeed="0.00" color="47,69,215">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H12_02" type="vehicle.nissan.patrol_2021_hard" depart="305.00" departLane="best" departPos="40.00" departSpeed="0.00" color="47,69,215">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H12_03" type="vehicle.nissan.patrol_2021_hard" depart="305.00" departLane="best" departPos="55.00" departSpeed="0.00" color="47,69,215">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H12_04" type="vehicle.nissan.patrol_2021_hard" depart="305.00" departLane="best" departPos="70.00" departSpeed="0.00" color="47,69,215">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0204" type="vehicle.volkswagen.t2_base" depart="306.00" color="3,24,19">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0205" type="vehicle.volkswagen.t2_2021_base" depart="307.50" color="254,255,223">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0206" type="vehicle.audi.a2_base" depart="309.00" color="237,255,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0207" type="vehicle.audi.etron_base" depart="310.50" color="15,11,4">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0208" type="vehicle.audi.etron_base" depart="312.00" color="11,8,159">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0209" type="vehicle.lincoln.mkz_2017_base" depart="313.50" color="36,53,30">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0210" type="vehicle.ford.ambulance_base" depart="315.00" color="255,255,246">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0211" type="vehicle.nissan.micra_base" depart="316.50" color="white">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0212" type="vehicle.audi.etron_base" depart="318.00" color="194,202,174">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0213" type="vehicle.tesla.model3_base" depart="319.50" color="255,255,236">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0214" type="vehicle.lincoln.mkz_2020_base" depart="321.00" color="255,255,253">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0215" type="vehicle.dodge.charger_2020_base" depart="322.50" color="1,0,19">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0216" type="vehicle.ford.ambulance_base" depart="324.00" color="0,19,148">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0217" type="vehicle.audi.tt_base" depart="325.50" color="255,255,254">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0218" type="vehicle.nissan.patrol_base" depart="327.00" color="29,2,8">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0219" type="vehicle.audi.a2_base" depart="328.50" color="255,194,20">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0220" type="vehicle.audi.etron_base" depart="330.00" color="115,137,117">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="H13_00" type="vehicle.audi.etron_hard" depart="330.00" departLane="best" departPos="10.00" departSpeed="0.00" color="49,30,41">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H13_01" type="vehicle.audi.etron_hard" depart="330.00" departLane="best" departPos="25.00" departSpeed="0.00" color="49,30,41">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H13_02" type="vehicle.audi.etron_hard" depart="330.00" departLane="best" departPos="40.00" departSpeed="0.00" color="49,30,41">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H13_03" type="vehicle.audi.etron_hard" depart="330.00" departLane="best" departPos="55.00" departSpeed="0.00" color="49,30,41">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H13_04" type="vehicle.audi.etron_hard" depart="330.00" departLane="best" departPos="70.00" departSpeed="0.00" color="49,30,41">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0221" type="vehicle.volkswagen.t2_base" depart="331.50" color="152,90,62">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0222" type="vehicle.audi.a2_base" depart="333.00" color="194,203,184">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0223" type="vehicle.volkswagen.t2_2021_base" depart="334.50" color="32,4,7">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0224" type="vehicle.audi.a2_base" depart="336.00" color="49,125,14">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0225" type="vehicle.citroen.c3_base" depart="337.50" color="115,123,148">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0226" type="vehicle.seat.leon_base" depart="339.00" color="31,68,56">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0227" type="vehicle.bmw.grandtourer_base" depart="340.50" color="242,242,231">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0228" type="vehicle.chevrolet.impala_base" depart="342.00" color="10,68,224">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0229" type="vehicle.jeep.wrangler_rubicon_base" depart="343.50" color="241,248,255">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0230" type="vehicle.lincoln.mkz_2020_base" depart="345.00" color="212,208,209">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0231" type="vehicle.lincoln.mkz_2017_base" depart="346.50" color="34,0,13">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0232" type="vehicle.seat.leon_base" depart="348.00" color="128,127,119">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0233" type="vehicle.bmw.grandtourer_base" depart="349.50" color="28,152,53">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0234" type="vehicle.jeep.wrangler_rubicon_base" depart="351.00" color="254,187,0">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0235" type="vehicle.volkswagen.t2_2021_base" depart="352.50" color="111,143,131">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0236" type="vehicle.ford.ambulance_base" depart="354.00" color="112,132,145">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vType id="vehicle.chevrolet.impala_hard" length="4.50" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H14_00" type="vehicle.chevrolet.impala_hard" depart="355.00" departLane="best" departPos="10.00" departSpeed="0.00" color="243,252,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H14_01" type="vehicle.chevrolet.impala_hard" depart="355.00" departLane="best" departPos="25.00" departSpeed="0.00" color="243,252,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H14_02" type="vehicle.chevrolet.impala_hard" depart="355.00" departLane="best" departPos="40.00" departSpeed="0.00" color="243,252,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H14_03" type="vehicle.chevrolet.impala_hard" depart="355.00" departLane="best" departPos="55.00" departSpeed="0.00" color="243,252,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H14_04" type="vehicle.chevrolet.impala_hard" depart="355.00" departLane="best" departPos="70.00" departSpeed="0.00" color="243,252,255">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0237" type="vehicle.volkswagen.t2_base" depart="355.50" color="149,79,63">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0238" type="vehicle.volkswagen.t2_2021_base" depart="357.00" color="238,21,13">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0239" type="vehicle.audi.etron_base" depart="358.50" color="255,255,223">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0240" type="vehicle.citroen.c3_base" depart="360.00" color="108,0,23">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0241" type="vehicle.lincoln.mkz_2020_base" depart="361.50" color="123,14,1">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0242" type="vehicle.jeep.wrangler_rubicon_base" depart="363.00" color="211,198,184">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0243" type="vehicle.tesla.model3_base" depart="364.50" color="234,48,47">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0244" type="vehicle.citroen.c3_base" depart="366.00" color="250,254,220">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0245" type="vehicle.jeep.wrangler_rubicon_base" depart="367.50" color="255,255,242">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0246" type="vehicle.dodge.charger_2020_base" depart="369.00" color="204,179,178">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0247" type="vehicle.jeep.wrangler_rubicon_base" depart="370.50" color="183,185,176">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0248" type="vehicle.citroen.c3_base" depart="372.00" color="white">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0249" type="vehicle.mini.cooper_s_base" depart="373.50" color="47,57,35">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0250" type="vehicle.lincoln.mkz_2020_base" depart="375.00" color="255,255,247">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0251" type="vehicle.dodge.charger_2020_base" depart="376.50" color="112,15,34">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0252" type="vehicle.citroen.c3_base" depart="378.00" color="246,245,242">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0253" type="vehicle.volkswagen.t2_base" depart="379.50" color="44,49,43">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="H15_00" type="vehicle.nissan.patrol_hard" depart="380.00" departLane="best" departPos="10.00" departSpeed="0.00" color="27,122,28">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H15_01" type="vehicle.nissan.patrol_hard" depart="380.00" departLane="best" departPos="25.00" departSpeed="0.00" color="27,122,28">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H15_02" type="vehicle.nissan.patrol_hard" depart="380.00" departLane="best" departPos="40.00" departSpeed="0.00" color="27,122,28">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H15_03" type="vehicle.nissan.patrol_hard" depart="380.00" departLane="best" departPos="55.00" departSpeed="0.00" color="27,122,28">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H15_04" type="vehicle.nissan.patrol_hard" depart="380.00" departLane="best" departPos="70.00" departSpeed="0.00" color="27,122,28">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0254" type="vehicle.bmw.grandtourer_base" depart="381.00" color="0,20,130">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0255" type="vehicle.volkswagen.t2_base" depart="382.50" color="249,244,235">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0256" type="vehicle.nissan.patrol_base" depart="384.00" color="36,47,208">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0257" type="vehicle.mercedes.coupe_2020_base" depart="385.50" color="248,255,255">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0258" type="vehicle.chevrolet.impala_base" depart="387.00" color="108,108,133">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0259" type="vehicle.toyota.prius_base" depart="388.50" color="248,243,242">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0260" type="vehicle.dodge.charger_police_base" depart="390.00" color="250,235,246">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0261" type="vehicle.nissan.micra_base" depart="391.50" color="218,39,10">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0262" type="vehicle.bmw.grandtourer_base" depart="393.00" color="21,70,236">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0263" type="vehicle.volkswagen.t2_2021_base" depart="394.50" color="248,255,255">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0264" type="vehicle.nissan.patrol_base" depart="396.00" color="33,15,7">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0265" type="vehicle.nissan.patrol_2021_base" depart="397.50" color="255,253,255">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0266" type="vehicle.jeep.wrangler_rubicon_base" depart="399.00" color="242,237,248">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0267" type="vehicle.mini.cooper_s_2021_base" depart="400.50" color="116,199,216">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0268" type="vehicle.jeep.wrangler_rubicon_base" depart="402.00" color="228,255,255">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0269" type="vehicle.mini.cooper_s_base" depart="403.50" color="57,55,66">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0270" type="vehicle.seat.leon_base" depart="405.00" color="116,0,15">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vType id="vehicle.mercedes.coupe_hard" length="4.50" minGap="2.00" speedFactor="normc(1.00,0.00)" vClass="passenger" width="1.80" height="1.50" accel="2.6" decel="4.5" sigma="0.0" tau="0.8"/>
+    <vehicle id="H16_00" type="vehicle.mercedes.coupe_hard" depart="405.00" departLane="best" departPos="10.00" departSpeed="0.00" color="47,33,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H16_01" type="vehicle.mercedes.coupe_hard" depart="405.00" departLane="best" departPos="25.00" departSpeed="0.00" color="47,33,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H16_02" type="vehicle.mercedes.coupe_hard" depart="405.00" departLane="best" departPos="40.00" departSpeed="0.00" color="47,33,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H16_03" type="vehicle.mercedes.coupe_hard" depart="405.00" departLane="best" departPos="55.00" departSpeed="0.00" color="47,33,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H16_04" type="vehicle.mercedes.coupe_hard" depart="405.00" departLane="best" departPos="70.00" departSpeed="0.00" color="47,33,42">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0271" type="vehicle.volkswagen.t2_base" depart="406.50" color="65,68,70">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0272" type="vehicle.lincoln.mkz_2020_base" depart="408.00" color="0,11,1">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0273" type="vehicle.jeep.wrangler_rubicon_base" depart="409.50" color="15,1,8">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0274" type="vehicle.lincoln.mkz_2020_base" depart="411.00" color="33,0,8">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0275" type="vehicle.lincoln.mkz_2017_base" depart="412.50" color="240,236,255">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0276" type="vehicle.volkswagen.t2_2021_base" depart="414.00" color="238,248,255">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0277" type="vehicle.tesla.model3_base" depart="415.50" color="255,248,255">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0278" type="vehicle.bmw.grandtourer_base" depart="417.00" color="255,255,248">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0279" type="vehicle.volkswagen.t2_base" depart="418.50" color="68,58,44">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0280" type="vehicle.chevrolet.impala_base" depart="420.00" color="26,2,6">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0281" type="vehicle.volkswagen.t2_2021_base" depart="421.50" color="34,29,9">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0282" type="vehicle.dodge.charger_police_base" depart="423.00" color="231,19,15">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0283" type="vehicle.tesla.model3_base" depart="424.50" color="203,210,177">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0284" type="vehicle.dodge.charger_2020_base" depart="426.00" color="0,19,19">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0285" type="vehicle.audi.etron_base" depart="427.50" color="255,244,237">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0286" type="vehicle.nissan.patrol_2021_base" depart="429.00" color="21,21,13">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="H17_00" type="vehicle.citroen.c3_hard" depart="430.00" departLane="best" departPos="10.00" departSpeed="0.00" color="180,205,197">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H17_01" type="vehicle.citroen.c3_hard" depart="430.00" departLane="best" departPos="25.00" departSpeed="0.00" color="180,205,197">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H17_02" type="vehicle.citroen.c3_hard" depart="430.00" departLane="best" departPos="40.00" departSpeed="0.00" color="180,205,197">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H17_03" type="vehicle.citroen.c3_hard" depart="430.00" departLane="best" departPos="55.00" departSpeed="0.00" color="180,205,197">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H17_04" type="vehicle.citroen.c3_hard" depart="430.00" departLane="best" departPos="70.00" departSpeed="0.00" color="180,205,197">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0287" type="vehicle.chevrolet.impala_base" depart="430.50" color="192,210,191">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0288" type="vehicle.nissan.patrol_base" depart="432.00" color="255,186,0">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0289" type="vehicle.mini.cooper_s_base" depart="433.50" color="132,0,16">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0290" type="vehicle.jeep.wrangler_rubicon_base" depart="435.00" color="white">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0291" type="vehicle.mercedes.coupe_2020_base" depart="436.50" color="3,16,12">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0292" type="vehicle.citroen.c3_base" depart="438.00" color="138,128,127">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0293" type="vehicle.volkswagen.t2_2021_base" depart="439.50" color="236,255,252">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0294" type="vehicle.volkswagen.t2_2021_base" depart="441.00" color="242,255,255">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0295" type="vehicle.dodge.charger_2020_base" depart="442.50" color="255,247,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0296" type="vehicle.audi.etron_base" depart="444.00" color="144,114,124">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0297" type="vehicle.chevrolet.impala_base" depart="445.50" color="white">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0298" type="vehicle.audi.tt_base" depart="447.00" color="121,83,26">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0299" type="vehicle.audi.a2_base" depart="448.50" color="23,68,239">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0300" type="vehicle.chevrolet.impala_base" depart="450.00" color="250,255,255">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0301" type="vehicle.seat.leon_base" depart="451.50" color="16,24,0">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0302" type="vehicle.volkswagen.t2_base" depart="453.00" color="133,15,41">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0303" type="vehicle.chevrolet.impala_base" depart="454.50" color="184,209,190">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="H18_00" type="vehicle.volkswagen.t2_hard" depart="455.00" departLane="best" departPos="10.00" departSpeed="0.00" color="201,210,176">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H18_01" type="vehicle.volkswagen.t2_hard" depart="455.00" departLane="best" departPos="25.00" departSpeed="0.00" color="201,210,176">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H18_02" type="vehicle.volkswagen.t2_hard" depart="455.00" departLane="best" departPos="40.00" departSpeed="0.00" color="201,210,176">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H18_03" type="vehicle.volkswagen.t2_hard" depart="455.00" departLane="best" departPos="55.00" departSpeed="0.00" color="201,210,176">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H18_04" type="vehicle.volkswagen.t2_hard" depart="455.00" departLane="best" departPos="70.00" departSpeed="0.00" color="201,210,176">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0304" type="vehicle.toyota.prius_base" depart="456.00" color="255,255,235">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0305" type="vehicle.tesla.model3_base" depart="457.50" color="246,240,238">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0306" type="vehicle.chevrolet.impala_base" depart="459.00" color="12,20,0">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0307" type="vehicle.audi.tt_base" depart="460.50" color="255,249,243">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0308" type="vehicle.audi.etron_base" depart="462.00" color="253,249,255">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0309" type="vehicle.bmw.grandtourer_base" depart="463.50" color="255,255,244">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0310" type="vehicle.dodge.charger_police_base" depart="465.00" color="25,34,22">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0311" type="vehicle.toyota.prius_base" depart="466.50" color="246,252,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0312" type="vehicle.jeep.wrangler_rubicon_base" depart="468.00" color="49,30,42">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0313" type="vehicle.jeep.wrangler_rubicon_base" depart="469.50" color="241,243,223">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0314" type="vehicle.dodge.charger_2020_base" depart="471.00" color="44,58,50">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0315" type="vehicle.audi.tt_base" depart="472.50" color="200,181,179">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0316" type="vehicle.audi.a2_base" depart="474.00" color="254,233,255">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0317" type="vehicle.seat.leon_base" depart="475.50" color="141,118,114">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0318" type="vehicle.bmw.grandtourer_base" depart="477.00" color="67,40,58">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0319" type="vehicle.bmw.grandtourer_base" depart="478.50" color="26,8,19">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0320" type="vehicle.chevrolet.impala_base" depart="480.00" color="154,103,57">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="H19_00" type="vehicle.audi.etron_hard" depart="480.00" departLane="best" departPos="10.00" departSpeed="0.00" color="20,14,32">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H19_01" type="vehicle.audi.etron_hard" depart="480.00" departLane="best" departPos="25.00" departSpeed="0.00" color="20,14,32">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H19_02" type="vehicle.audi.etron_hard" depart="480.00" departLane="best" departPos="40.00" departSpeed="0.00" color="20,14,32">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H19_03" type="vehicle.audi.etron_hard" depart="480.00" departLane="best" departPos="55.00" departSpeed="0.00" color="20,14,32">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="H19_04" type="vehicle.audi.etron_hard" depart="480.00" departLane="best" departPos="70.00" departSpeed="0.00" color="20,14,32">
+        <route edges="27.0.00 37.0.00 35.0.00"/>
+    </vehicle>
+    <vehicle id="base_0321" type="vehicle.mini.cooper_s_base" depart="481.50" color="205,201,172">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0322" type="vehicle.nissan.patrol_2021_base" depart="483.00" color="243,255,245">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0323" type="vehicle.toyota.prius_base" depart="484.50" color="47,42,64">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0324" type="vehicle.volkswagen.t2_base" depart="486.00" color="145,19,18">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0325" type="vehicle.audi.etron_base" depart="487.50" color="209,21,26">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0326" type="vehicle.audi.a2_base" depart="489.00" color="56,48,63">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0327" type="vehicle.toyota.prius_base" depart="490.50" color="251,220,0">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0328" type="vehicle.bmw.grandtourer_base" depart="492.00" color="60,61,36">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0329" type="vehicle.volkswagen.t2_2021_base" depart="493.50" color="254,251,247">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0330" type="vehicle.mini.cooper_s_2021_base" depart="495.00" color="189,194,210">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0331" type="vehicle.dodge.charger_2020_base" depart="496.50" color="255,250,255">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0332" type="vehicle.bmw.grandtourer_base" depart="498.00" color="212,185,207">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0333" type="vehicle.mini.cooper_s_base" depart="499.50" color="254,255,255">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0334" type="vehicle.jeep.wrangler_rubicon_base" depart="501.00" color="255,236,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0335" type="vehicle.volkswagen.t2_2021_base" depart="502.50" color="149,190,250">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0336" type="vehicle.nissan.patrol_2021_base" depart="504.00" color="255,248,252">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0337" type="vehicle.audi.etron_base" depart="505.50" color="59,31,48">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0338" type="vehicle.nissan.patrol_base" depart="507.00" color="26,131,15">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0339" type="vehicle.dodge.charger_2020_base" depart="508.50" color="48,36,47">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0340" type="vehicle.ford.ambulance_base" depart="510.00" color="37,32,59">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0341" type="vehicle.nissan.patrol_2021_base" depart="511.50" color="250,234,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0342" type="vehicle.nissan.patrol_2021_base" depart="513.00" color="240,255,255">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0343" type="vehicle.volkswagen.t2_base" depart="514.50" color="24,16,25">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0344" type="vehicle.citroen.c3_base" depart="516.00" color="255,253,225">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0345" type="vehicle.mercedes.coupe_base" depart="517.50" color="119,128,108">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0346" type="vehicle.lincoln.mkz_2020_base" depart="519.00" color="53,68,46">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0347" type="vehicle.audi.etron_base" depart="520.50" color="255,251,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0348" type="vehicle.toyota.prius_base" depart="522.00" color="227,39,12">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0349" type="vehicle.nissan.patrol_2021_base" depart="523.50" color="239,246,233">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0350" type="vehicle.toyota.prius_base" depart="525.00" color="9,27,9">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0351" type="vehicle.volkswagen.t2_2021_base" depart="526.50" color="white">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0352" type="vehicle.bmw.grandtourer_base" depart="528.00" color="243,251,255">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0353" type="vehicle.tesla.model3_base" depart="529.50" color="6,0,24">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0354" type="vehicle.dodge.charger_2020_base" depart="531.00" color="203,187,200">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0355" type="vehicle.mini.cooper_s_2021_base" depart="532.50" color="4,17,143">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0356" type="vehicle.volkswagen.t2_2021_base" depart="534.00" color="33,11,32">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0357" type="vehicle.audi.tt_base" depart="535.50" color="206,37,13">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0358" type="vehicle.lincoln.mkz_2017_base" depart="537.00" color="230,46,20">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0359" type="vehicle.lincoln.mkz_2017_base" depart="538.50" color="240,235,255">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0360" type="vehicle.dodge.charger_police_base" depart="540.00" color="37,55,225">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0361" type="vehicle.bmw.grandtourer_base" depart="541.50" color="57,50,41">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0362" type="vehicle.dodge.charger_police_base" depart="543.00" color="240,255,224">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0363" type="vehicle.jeep.wrangler_rubicon_base" depart="544.50" color="white">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0364" type="vehicle.mini.cooper_s_base" depart="546.00" color="177,181,195">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0365" type="vehicle.volkswagen.t2_base" depart="547.50" color="57,57,33">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0366" type="vehicle.bmw.grandtourer_base" depart="549.00" color="129,217,254">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0367" type="vehicle.nissan.micra_base" depart="550.50" color="159,0,0">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0368" type="vehicle.tesla.model3_base" depart="552.00" color="125,212,232">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0369" type="vehicle.audi.etron_base" depart="553.50" color="255,255,238">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0370" type="vehicle.dodge.charger_police_base" depart="555.00" color="140,88,50">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0371" type="vehicle.mercedes.coupe_base" depart="556.50" color="114,147,137">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0372" type="vehicle.dodge.charger_2020_base" depart="558.00" color="228,255,237">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0373" type="vehicle.audi.etron_base" depart="559.50" color="117,139,140">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0374" type="vehicle.audi.a2_base" depart="561.00" color="220,254,243">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0375" type="vehicle.nissan.micra_base" depart="562.50" color="255,215,0">
+        <route edges="-21.0.00 -41.0.00 -51.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0376" type="vehicle.citroen.c3_base" depart="564.00" color="31,22,25">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0377" type="vehicle.audi.etron_base" depart="565.50" color="12,25,19">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0378" type="vehicle.mini.cooper_s_base" depart="567.00" color="237,251,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0379" type="vehicle.mini.cooper_s_2021_base" depart="568.50" color="126,148,139">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0380" type="vehicle.dodge.charger_police_base" depart="570.00" color="255,237,244">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0381" type="vehicle.lincoln.mkz_2020_base" depart="571.50" color="white">
+        <route edges="-6.0.00 -7.0.00 -8.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0382" type="vehicle.volkswagen.t2_2021_base" depart="573.00" color="243,236,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0383" type="vehicle.nissan.patrol_2021_base" depart="574.50" color="236,253,255">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0384" type="vehicle.audi.tt_base" depart="576.00" color="23,15,0">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0385" type="vehicle.audi.etron_base" depart="577.50" color="137,96,58">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0386" type="vehicle.audi.etron_base" depart="579.00" color="137,127,142">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0387" type="vehicle.mini.cooper_s_2021_base" depart="580.50" color="132,192,252">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0388" type="vehicle.ford.ambulance_base" depart="582.00" color="255,233,227">
+        <route edges="-36.0.00 -38.0.00"/>
+    </vehicle>
+    <vehicle id="base_0389" type="vehicle.seat.leon_base" depart="583.50" color="248,255,255">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0390" type="vehicle.nissan.micra_base" depart="585.00" color="33,1,23">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0391" type="vehicle.mercedes.coupe_2020_base" depart="586.50" color="41,44,55">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0392" type="vehicle.dodge.charger_2020_base" depart="588.00" color="23,2,1">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0393" type="vehicle.toyota.prius_base" depart="589.50" color="133,131,131">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+    <vehicle id="base_0394" type="vehicle.nissan.patrol_2021_base" depart="591.00" color="140,10,2">
+        <route edges="-21.0.00 -22.0.00 -52.0.00"/>
+    </vehicle>
+    <vehicle id="base_0395" type="vehicle.lincoln.mkz_2020_base" depart="592.50" color="122,144,111">
+        <route edges="20.0.00 48.0.00 -39.0.00 25.0.00"/>
+    </vehicle>
+    <vehicle id="base_0396" type="vehicle.bmw.grandtourer_base" depart="594.00" color="237,245,251">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0397" type="vehicle.bmw.grandtourer_base" depart="595.50" color="247,189,0">
+        <route edges="-39.0.00 -0.0.00 -1.0.00 -2.0.00 -3.0.00"/>
+    </vehicle>
+    <vehicle id="base_0398" type="vehicle.carlamotors.carlacola_base" depart="597.00" color="34,45,223">
+        <route edges="-6.0.00 46.0.00 45.0.00 -9.0.00"/>
+    </vehicle>
+    <vehicle id="base_0399" type="vehicle.volkswagen.t2_2021_base" depart="598.50" color="121,0,0">
+        <route edges="24.0.00 23.0.00"/>
+    </vehicle>
+</routes>

@@ -1,0 +1,14 @@
+numpy>=1.24
+PyYAML>=6.0
+Pillow>=10.0
+tqdm>=4.66
+pandas>=2.0
+matplotlib>=3.8
+requests>=2.31
+lxml>=5.0
+opencv-python>=4.9
+
+# External runtime dependencies are installed separately:
+# - CARLA 0.9.13 Python API
+# - SUMO (providing traci and sumolib via SUMO_HOME)
+# - Optional for baseline training/evaluation: PyTorch + FastReID

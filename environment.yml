@@ -1,0 +1,21 @@
+name: simveri
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.8,<3.11
+  - pip
+  - numpy
+  - pyyaml
+  - pillow
+  - tqdm
+  - pandas
+  - matplotlib
+  - requests
+  - lxml
+  - opencv
+
+# External components are intentionally not pinned here because they depend on
+# the local platform and CUDA stack:
+# - CARLA 0.9.13 Python API
+# - SUMO (traci / sumolib via SUMO_HOME)
+# - Optional validation stack: PyTorch + FastReID

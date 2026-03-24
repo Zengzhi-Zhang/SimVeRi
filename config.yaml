@@ -1,0 +1,253 @@
+simulation:
+  carla_version: "0.9.13"
+  map: "Town05"
+  synchronous_mode: true
+  fixed_delta_seconds: 0.0333
+  weather: "ClearNoon"
+  weather_params:
+    cloudiness: 5.0
+    precipitation: 0.0
+    wind_intensity: 5.0
+    sun_azimuth_angle: 45.0
+    sun_altitude_angle: 45.0
+    fog_density: 0.0
+    wetness: 0.0
+
+camera:
+  count: 30
+  resolution:
+    width: 2560
+    height: 1440
+  fov: 90
+  sensor_type: "sensor.camera.rgb"
+  topology_file: "camera_topology.json"
+
+acquisition:
+  physics_fps: 30
+  sampling_fps: 6
+  sampling_interval: 5
+  image_format: "jpg"
+  image_quality: 98
+  occlusion_threshold: 0.75
+  min_bbox_area: 9216
+  min_bbox_width: 96
+  min_bbox_height: 96
+  max_images_per_track: 80
+  min_motion_delta: 1.0
+  bbox_padding: 0.01
+  near_distance: 7.0
+  far_distance: 75.0
+  per_camera_overrides:
+    c025:
+      min_bbox_area: 4096
+      min_bbox_width: 64
+      min_bbox_height: 64
+      far_distance: 120.0
+    c026:
+      min_bbox_area: 4096
+      min_bbox_width: 64
+      min_bbox_height: 64
+      far_distance: 120.0
+    c027:
+      min_bbox_area: 4096
+      min_bbox_width: 64
+      min_bbox_height: 64
+      far_distance: 120.0
+    c028:
+      min_bbox_area: 4096
+      min_bbox_width: 64
+      min_bbox_height: 64
+      far_distance: 120.0
+    c029:
+      min_bbox_area: 4096
+      min_bbox_width: 64
+      min_bbox_height: 64
+      far_distance: 120.0
+    c030:
+      min_bbox_area: 4096
+      min_bbox_width: 64
+      min_bbox_height: 64
+      far_distance: 120.0
+
+dataset:
+  name: "SimVeRi"
+  root: "."
+  subsets:
+    base:
+      count: 600
+    hard:
+      fleets: 25
+      vehicles_per_fleet: 5
+    occ:
+      count: 50
+
+traffic:
+  spawn:
+    vehicles_per_batch: 100
+    spawn_interval: 2.0
+  vehicle_blueprints:
+    - blueprint: "vehicle.audi.a2"
+      weight: 0.05
+      category: "sedan"
+      description: "Audi A2"
+    - blueprint: "vehicle.audi.tt"
+      weight: 0.04
+      category: "coupe"
+      description: "Audi TT"
+    - blueprint: "vehicle.bmw.grandtourer"
+      weight: 0.05
+      category: "sedan"
+      description: "BMW Grand Tourer"
+    - blueprint: "vehicle.chevrolet.impala"
+      weight: 0.05
+      category: "sedan"
+      description: "Chevrolet Impala"
+    - blueprint: "vehicle.dodge.charger_2020"
+      weight: 0.05
+      category: "sedan"
+      description: "Dodge Charger 2020"
+    - blueprint: "vehicle.lincoln.mkz_2017"
+      weight: 0.03
+      category: "sedan"
+      description: "Lincoln MKZ 2017"
+    - blueprint: "vehicle.lincoln.mkz_2020"
+      weight: 0.03
+      category: "sedan"
+      description: "Lincoln MKZ 2020"
+    - blueprint: "vehicle.mercedes.coupe"
+      weight: 0.03
+      category: "coupe"
+      description: "Mercedes Coupe"
+    - blueprint: "vehicle.mercedes.coupe_2020"
+      weight: 0.03
+      category: "coupe"
+      description: "Mercedes Coupe 2020"
+    - blueprint: "vehicle.tesla.model3"
+      weight: 0.05
+      category: "sedan"
+      description: "Tesla Model 3"
+    - blueprint: "vehicle.toyota.prius"
+      weight: 0.04
+      category: "sedan"
+      description: "Toyota Prius"
+    - blueprint: "vehicle.audi.etron"
+      weight: 0.08
+      category: "suv"
+      description: "Audi e-tron"
+    - blueprint: "vehicle.jeep.wrangler_rubicon"
+      weight: 0.09
+      category: "suv"
+      description: "Jeep Wrangler Rubicon"
+    - blueprint: "vehicle.nissan.patrol"
+      weight: 0.04
+      category: "suv"
+      description: "Nissan Patrol"
+    - blueprint: "vehicle.nissan.patrol_2021"
+      weight: 0.04
+      category: "suv"
+      description: "Nissan Patrol 2021"
+    - blueprint: "vehicle.mini.cooper_s"
+      weight: 0.04
+      category: "hatchback"
+      description: "Mini Cooper S"
+    - blueprint: "vehicle.mini.cooper_s_2021"
+      weight: 0.04
+      category: "hatchback"
+      description: "Mini Cooper S 2021"
+    - blueprint: "vehicle.citroen.c3"
+      weight: 0.03
+      category: "hatchback"
+      description: "Citroen C3"
+    - blueprint: "vehicle.seat.leon"
+      weight: 0.02
+      category: "hatchback"
+      description: "Seat Leon"
+    - blueprint: "vehicle.nissan.micra"
+      weight: 0.02
+      category: "hatchback"
+      description: "Nissan Micra"
+    - blueprint: "vehicle.volkswagen.t2"
+      weight: 0.05
+      category: "van"
+      description: "Volkswagen T2"
+    - blueprint: "vehicle.volkswagen.t2_2021"
+      weight: 0.05
+      category: "van"
+      description: "Volkswagen T2 2021"
+    - blueprint: "vehicle.dodge.charger_police"
+      weight: 0.02
+      category: "special"
+      description: "Police vehicle"
+    - blueprint: "vehicle.ford.ambulance"
+      weight: 0.02
+      category: "special"
+      description: "Ambulance"
+    - blueprint: "vehicle.carlamotors.carlacola"
+      weight: 0.01
+      category: "special"
+      description: "Special vehicle"
+  color_distribution:
+    colors:
+      - name: "white"
+        rgb: [255, 255, 255]
+        weight: 0.15
+      - name: "warm_white"
+        rgb: [255, 250, 240]
+        weight: 0.10
+      - name: "cool_white"
+        rgb: [240, 248, 255]
+        weight: 0.05
+      - name: "black"
+        rgb: [15, 15, 15]
+        weight: 0.15
+      - name: "dark_gray"
+        rgb: [50, 50, 50]
+        weight: 0.12
+      - name: "gray"
+        rgb: [128, 128, 128]
+        weight: 0.10
+      - name: "silver"
+        rgb: [192, 192, 192]
+        weight: 0.08
+      - name: "red"
+        rgb: [220, 30, 30]
+        weight: 0.05
+      - name: "dark_red"
+        rgb: [139, 0, 0]
+        weight: 0.03
+      - name: "burgundy"
+        rgb: [128, 0, 32]
+        weight: 0.02
+      - name: "blue"
+        rgb: [30, 60, 220]
+        weight: 0.04
+      - name: "dark_blue"
+        rgb: [0, 0, 139]
+        weight: 0.02
+      - name: "sky_blue"
+        rgb: [135, 206, 235]
+        weight: 0.02
+      - name: "yellow"
+        rgb: [255, 200, 0]
+        weight: 0.02
+      - name: "green"
+        rgb: [34, 139, 34]
+        weight: 0.02
+      - name: "brown"
+        rgb: [139, 90, 43]
+        weight: 0.02
+      - name: "beige"
+        rgb: [245, 245, 220]
+        weight: 0.01
+
+batch:
+  mvp:
+    duration_seconds: 600
+  production:
+    total_batches: 6
+    duration_per_batch: 1800
+
+validation:
+  bbox_deviation_max: 10
+  min_samples_per_camera: 100
+  max_speed_threshold: 60.0
