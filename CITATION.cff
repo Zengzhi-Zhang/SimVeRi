@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the code archive and, where relevant, the associated dataset release."
+title: "SimVeRi code"
+type: software
+version: "2.0"
+doi: 10.5281/zenodo.19207143
+url: "https://doi.org/10.5281/zenodo.19207143"
+repository-code: "https://github.com/Zengzhi-Zhang/SimVeRi"
+abstract: >-
+  Reference implementation for generating the SimVeRi dataset, assembling the
+  public release package, and reproducing technical-validation workflows for
+  vehicle re-identification, trajectory reconstruction, and air-ground
+  characterization.
+license: "MIT"
+authors:
+  - family-names: "Zhang"
+    given-names: "Zengzhi"
+    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    email: "zhangzengzhi512@seu.edu.cn"
+  - family-names: "Cao"
+    given-names: "Qi"
+    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    email: "cao_qi@seu.edu.cn"
+  - family-names: "Deng"
+    given-names: "Yue"
+    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    email: "dengyue@seu.edu.cn"
+  - family-names: "Zhang"
+    given-names: "Mengyao"
+    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    email: "zmyao0829@126.com"
+  - family-names: "Wu"
+    given-names: "Changjian"
+    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    email: "changjian12@126.com"
+  - family-names: "Ren"
+    given-names: "Gang"
+    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    email: "rengang@seu.edu.cn"
+keywords:
+  - "vehicle re-identification"
+  - "synthetic dataset"
+  - "co-simulation"
+  - "trajectory reconstruction"
+  - "air-ground viewpoints"
+references:
+  - type: dataset
+    title: "SimVeRi: a synthetic dataset for vehicle re-identification with spatiotemporal annotations and air-ground viewpoints"
+    doi: 10.5281/zenodo.19207203
+    url: "https://doi.org/10.5281/zenodo.19207203"
