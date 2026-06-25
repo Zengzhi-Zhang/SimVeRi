@@ -27,8 +27,75 @@ from src.path_utils import (
 from fastreid.config import get_cfg
 from fastreid.engine import DefaultTrainer
 
+# ---------------------------------------------------------------------------
+# Windows stability patch. FastReID's DataLoaderX prefetches batches to the GPU
+# from a background thread on a side CUDA stream; on Windows this async cross-
+# thread CUDA interaction can intermittently crash/stall training (observed here
+# as the process dying mid-epoch with the model evicted from VRAM). We replace
+# the TRAIN DataLoaderX with a standard torch DataLoader (no CUDA prefetch) and
+# move each batch to the model device in the main training step instead.
+# ---------------------------------------------------------------------------
+from collections.abc import Mapping as _Mapping
+from torch.utils.data import DataLoader as _TorchDataLoader
+import fastreid.data.build as _fastreid_data_build
+from fastreid.engine.train_loop import SimpleTrainer as _SimpleTrainer
+from fastreid.utils.params import ContiguousParams as _ContiguousParams
 
-# SimVeRi "twins" ID range used by the dataset variants in src/dataset/simveri_fastreid.py
+
+class _TrainDataLoaderNoCudaPrefetch(_TorchDataLoader):
+    """Drop-in for fastreid DataLoaderX on the train loader: ignores local_rank
+    and keeps ordinary torch DataLoader semantics (no background CUDA prefetch)."""
+
+    def __init__(self, local_rank=None, **kwargs):
+        super().__init__(**kwargs)
+
+
+_fastreid_data_build.DataLoaderX = _TrainDataLoaderNoCudaPrefetch
+
+
+def _move_batch_to_device(batch, device):
+    if torch.is_tensor(batch):
+        return batch.to(device=device, non_blocking=True)
+    if isinstance(batch, _Mapping):
+        return type(batch)((k, _move_batch_to_device(v, device)) for k, v in batch.items())
+    if isinstance(batch, tuple) and hasattr(batch, "_fields"):
+        return type(batch)(*(_move_batch_to_device(v, device) for v in batch))
+    if isinstance(batch, tuple):
+        return tuple(_move_batch_to_device(v, device) for v in batch)
+    if isinstance(batch, list):
+        return [_move_batch_to_device(v, device) for v in batch]
+    return batch
+
+
+def _run_step_main_thread_to_device(self):
+    import time as _time
+    assert self.model.training, "[SimpleTrainer] model was changed to eval mode!"
+    start = _time.perf_counter()
+    data = next(self._data_loader_iter)
+    _m = self.model.module if hasattr(self.model, "module") else self.model
+    if hasattr(_m, "device"):
+        data = _move_batch_to_device(data, _m.device)
+    data_time = _time.perf_counter() - start
+    loss_dict = self.model(data)
+    losses = sum(loss_dict.values())
+    self.optimizer.zero_grad(set_to_none=False)
+    losses.backward()
+    self._write_metrics(loss_dict, data_time)
+    self.optimizer.step()
+    if isinstance(self.param_wrapper, _ContiguousParams):
+        self.param_wrapper.assert_buffer_is_valid()
+
+
+_SimpleTrainer.run_step = _run_step_main_thread_to_device
+
+
+# SimVeRi "twins" ID range used by the optional dataset variants in src/dataset/simveri_fastreid.py.
+# Note: in the released layout the core images/ contains only base + occlusion vehicles
+# (mapped IDs 0001-0650); Twins are distributed separately under extras/twins/ (mapped IDs
+# 0431-0555). Because these per-component identifier spaces are not globally unique, Twins are
+# best identified by original_id prefix ('H') / fleet_id or by source folder rather than by a
+# mapped-ID range. These constants are used only by the optional SimVeRiBase / SimVeRiTwins
+# training variants; the released core benchmark and the reference baseline do not use them.
 SIMVERI_TWINS_ID_START = 431
 SIMVERI_TWINS_ID_END = 530
 
@@ -147,6 +214,9 @@ def parse_args():
 
     # Solver
     parser.add_argument("--batch-size", type=int, default=24, help="Images per batch (total).")
+    parser.add_argument("--epochs", type=int, default=150, help="Total training epochs. LR milestones auto-scale when != 150.")
+    parser.add_argument("--num-workers", type=int, default=4, help="DataLoader worker processes (0 = single-thread, can stall on Windows).")
+    parser.add_argument("--resume", action="store_true", help="Resume from the last checkpoint in --output-dir (restores optimizer/scheduler/epoch).")
     parser.add_argument("--base-lr", type=float, default=None, help="If set, override BASE_LR. Otherwise auto-scale from lr-ref.")
     parser.add_argument("--lr-ref", type=float, default=0.00035, help="Reference LR for lr-ref-batch.")
     parser.add_argument("--lr-ref-batch", type=int, default=32, help="Reference batch size for lr scaling.")
@@ -252,12 +322,12 @@ def setup_cfg(args):
     cfg.INPUT.CJ.HUE = 0.1
     
     # ----------------------------------------------------------------------------
-    cfg.DATALOADER.NUM_WORKERS = 0
+    cfg.DATALOADER.NUM_WORKERS = int(args.num_workers)
     cfg.DATALOADER.NUM_INSTANCE = 4  # sample 4 images per identity
     cfg.DATALOADER.SAMPLER_TRAIN = "NaiveIdentitySampler"
     
     # ----------------------------------------------------------------------------
-    cfg.SOLVER.MAX_EPOCH = 150  
+    cfg.SOLVER.MAX_EPOCH = int(args.epochs)
     if args.base_lr is not None:
         cfg.SOLVER.BASE_LR = float(args.base_lr)
     else:
@@ -268,7 +338,14 @@ def setup_cfg(args):
     cfg.SOLVER.IMS_PER_BATCH = int(args.batch_size)
     
     cfg.SOLVER.SCHED = "MultiStepLR"
-    cfg.SOLVER.STEPS = [60, 100, 130]  # decay the learning rate three times
+    # LR milestones: default keeps the validated 150-epoch schedule; other epoch
+    # budgets scale milestones to ~0.5 and ~0.83 of the run so decay stays inside
+    # training (60 epochs -> [30, 50], matching configs/simveri_resnet50_ibn.yml).
+    if int(args.epochs) == 150:
+        cfg.SOLVER.STEPS = [60, 100, 130]
+    else:
+        _E = int(args.epochs)
+        cfg.SOLVER.STEPS = [m for m in (round(0.5 * _E), round(0.83 * _E)) if 0 < m < _E]
     cfg.SOLVER.GAMMA = 0.1
     
     # Warmup
@@ -292,7 +369,7 @@ def setup_cfg(args):
         cfg.SOLVER.FREEZE_ITERS = args.freeze_backbone_iters
     
     # Checkpoint
-    cfg.SOLVER.CHECKPOINT_PERIOD = 20
+    cfg.SOLVER.CHECKPOINT_PERIOD = 1  # save every epoch (Windows resilience: clean resume after a crash)
     
     # ----------------------------------------------------------------------------
     cfg.DATASETS.NAMES = (dataset_name,)
@@ -405,7 +482,10 @@ def main():
     print("=" * 70)
 
     trainer = DefaultTrainer(cfg)
-    trainer.resume_or_load(resume=False)
+    trainer.resume_or_load(resume=args.resume)
+    print(f"[resume] resume={args.resume}, start_epoch={trainer.start_epoch}, max_epoch={trainer.max_epoch}")
+    if args.resume and trainer.checkpointer.has_checkpoint() and trainer.start_epoch <= 0:
+        raise RuntimeError("Resume requested but start_epoch is 0; checkpoint may lack an 'epoch' field.")
 
     # Reset BN running stats after loading pretrained weights
     # This removes domain-specific statistics from SimVeRi pretraining
