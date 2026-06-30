@@ -10,7 +10,7 @@ SimVeRi: a synthetic dataset for vehicle re-identification with spatiotemporal a
 
 - Code repository: <https://github.com/Zengzhi-Zhang/SimVeRi>
 - Code archive DOI: <https://doi.org/10.5281/zenodo.19207143>
-- Dataset DOI: <https://doi.org/10.5281/zenodo.19207203>
+- Dataset DOI: <https://doi.org/10.5281/zenodo.21037242>
 - Code license: `MIT License`
 - Dataset license: `CC BY 4.0`
 - Corresponding author: Gang Ren (<rengang@seu.edu.cn>)
