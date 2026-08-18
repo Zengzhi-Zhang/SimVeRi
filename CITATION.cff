@@ -2,10 +2,18 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the code archive and, where relevant, the associated dataset release."
 title: "SimVeRi code"
 type: software
-version: "2.0"
-doi: 10.5281/zenodo.19207143
-url: "https://doi.org/10.5281/zenodo.19207143"
+version: "2.1.0"
+doi: 10.5281/zenodo.21980102
+url: "https://doi.org/10.5281/zenodo.21980102"
+date-released: "2026-08-17"
 repository-code: "https://github.com/Zengzhi-Zhang/SimVeRi"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21980102
+    description: "Version-specific DOI for SimVeRi code v2.1.0"
+  - type: doi
+    value: 10.5281/zenodo.19207142
+    description: "Concept DOI for all versions of the SimVeRi code"
 abstract: >-
   Reference implementation for generating the SimVeRi dataset, assembling the
   public release package, and reproducing technical-validation workflows for
@@ -15,28 +23,32 @@ license: "MIT"
 authors:
   - family-names: "Zhang"
     given-names: "Zengzhi"
-    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    affiliation: "Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China"
     email: "zhangzengzhi512@seu.edu.cn"
   - family-names: "Cao"
     given-names: "Qi"
-    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    affiliation: "Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China; Department of Civil and Environmental Engineering, National University of Singapore, Singapore"
     email: "cao_qi@seu.edu.cn"
   - family-names: "Deng"
     given-names: "Yue"
-    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    affiliation: "Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China"
     email: "dengyue@seu.edu.cn"
   - family-names: "Zhang"
     given-names: "Mengyao"
-    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    affiliation: "Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China"
     email: "zmyao0829@126.com"
   - family-names: "Wu"
     given-names: "Changjian"
-    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    affiliation: "Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China"
     email: "changjian12@126.com"
   - family-names: "Ren"
     given-names: "Gang"
-    affiliation: "Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University"
+    affiliation: "Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China"
     email: "rengang@seu.edu.cn"
+  - family-names: "Shi"
+    given-names: "Xinyu"
+    affiliation: "Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China"
+    email: "shixinyu0915@yeah.net"
 keywords:
   - "vehicle re-identification"
   - "synthetic dataset"
@@ -44,7 +56,23 @@ keywords:
   - "trajectory reconstruction"
   - "air-ground viewpoints"
 references:
-  - type: dataset
-    title: "SimVeRi: a synthetic dataset for vehicle re-identification with spatiotemporal annotations and air-ground viewpoints"
-    doi: 10.5281/zenodo.19207203
-    url: "https://doi.org/10.5281/zenodo.19207203"
+  - type: data
+    authors:
+      - family-names: "Zhang"
+        given-names: "Zengzhi"
+      - family-names: "Cao"
+        given-names: "Qi"
+      - family-names: "Deng"
+        given-names: "Yue"
+      - family-names: "Zhang"
+        given-names: "Mengyao"
+      - family-names: "Wu"
+        given-names: "Changjian"
+      - family-names: "Ren"
+        given-names: "Gang"
+      - family-names: "Shi"
+        given-names: "Xinyu"
+    title: "SimVeRi: a synthetic vehicle re-identification dataset with spatiotemporal metadata and aerial–ground views"
+    version: "1.2"
+    doi: 10.5281/zenodo.21980379
+    url: "https://doi.org/10.5281/zenodo.21980379"

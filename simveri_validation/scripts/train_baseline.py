@@ -1,7 +1,8 @@
 # scripts/train_baseline.py
-"""
-SimVeRi baseline training script v2.0
-Optimized release: corrected class count, Circle Loss, and stronger augmentation
+"""Train the reference SimVeRi ResNet-50-IBN baseline.
+
+The command-line defaults reproduce the paper training recipe. Explicit
+overrides remain available for the separate transfer-learning experiments.
 """
 
 import os
@@ -14,13 +15,19 @@ import torch
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
+PAPER_CONFIG_PATH = os.path.join(
+    PROJECT_ROOT, "configs", "simveri_r50_ibn_paper.yaml"
+)
+PAPER_INPUT_SIZE = 256
+PAPER_BATCH_SIZE = 16
+PAPER_EPOCHS = 60
+
 
 import src.dataset.simveri_fastreid
 import src.dataset.veri776_fastreid
 from src.path_utils import (
     get_default_simveri_root,
     get_validation_output_dir,
-    get_validation_pretrained_path,
 )
 
 # FastReID
@@ -204,17 +211,45 @@ def parse_args():
                         help="Fraction of training IDs to use (0 < ratio <= 1.0). Default 1.0 = full dataset.")
     parser.add_argument("--seed", type=int, default=42,
                         help="Random seed for few-shot ID sampling.")
-    parser.add_argument("--weights", type=str, default=get_validation_pretrained_path(),
-                        help="Path to pretrained weights. Use 'none' for ImageNet-only initialization.")
+    parser.add_argument(
+        "--config-file",
+        type=str,
+        default=PAPER_CONFIG_PATH,
+        help="FastReID YAML to load before command-line overrides.",
+    )
+    parser.add_argument(
+        "--weights",
+        type=str,
+        default="none",
+        help=(
+            "Optional ReID checkpoint. The default 'none' uses the "
+            "ImageNet-pretrained ResNet-50-IBN backbone specified by the paper."
+        ),
+    )
 
     # Input / augmentation
-    parser.add_argument("--input-size", type=int, default=320, help="Train/test input size (square).")
+    parser.add_argument(
+        "--input-size",
+        type=int,
+        default=PAPER_INPUT_SIZE,
+        help="Train/test input size (square). Paper default: 256.",
+    )
     parser.add_argument("--rea-prob", type=float, default=0.2, help="Random Erasing probability.")
     parser.add_argument("--cj-prob", type=float, default=0.2, help="ColorJitter probability.")
 
     # Solver
-    parser.add_argument("--batch-size", type=int, default=24, help="Images per batch (total).")
-    parser.add_argument("--epochs", type=int, default=150, help="Total training epochs. LR milestones auto-scale when != 150.")
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=PAPER_BATCH_SIZE,
+        help="Images per batch (total). Paper default: 16 (4 IDs x 4 images).",
+    )
+    parser.add_argument(
+        "--epochs",
+        type=int,
+        default=PAPER_EPOCHS,
+        help="Total training epochs. Paper default: 60; milestones are 30 and 50.",
+    )
     parser.add_argument("--num-workers", type=int, default=4, help="DataLoader worker processes (0 = single-thread, can stall on Windows).")
     parser.add_argument("--resume", action="store_true", help="Resume from the last checkpoint in --output-dir (restores optimizer/scheduler/epoch).")
     parser.add_argument("--base-lr", type=float, default=None, help="If set, override BASE_LR. Otherwise auto-scale from lr-ref.")
@@ -229,6 +264,11 @@ def parse_args():
                         help="Freeze backbone for this many iterations at start of training.")
     parser.add_argument("--reset-bn", action="store_true",
                         help="Reset BN running stats after loading pretrained weights.")
+    parser.add_argument(
+        "--config-only",
+        action="store_true",
+        help="Resolve and write the configuration, print its summary, and exit without training.",
+    )
 
     return parser.parse_args()
 
@@ -252,8 +292,14 @@ def apply_loss_config(cfg) -> Tuple[str, ...]:
 
 
 def setup_cfg(args):
-    """Create the optimized training configuration."""
+    """Create the resolved training configuration."""
     cfg = get_cfg()
+    if args.config_file:
+        config_file = os.path.abspath(os.path.expanduser(args.config_file))
+        if not os.path.isfile(config_file):
+            raise FileNotFoundError(f"Training config not found: {config_file}")
+        cfg.merge_from_file(config_file)
+
     dataset_root = args.dataset_root
     dataset_name = args.dataset_name
     num_classes = count_train_ids(dataset_root, dataset_name,
@@ -261,8 +307,15 @@ def setup_cfg(args):
                                   fewshot_seed=args.seed,
                                   simveri_root=args.simveri_root)
 
+    if num_classes <= 0:
+        raise FileNotFoundError(
+            f"No training identities were found for {dataset_name!r} under "
+            f"{dataset_root!r}. Supply the correct --dataset-root or set the "
+            "corresponding dataset-root environment variable."
+        )
+
     # NaiveIdentitySampler needs at least IMS_PER_BATCH / NUM_INSTANCE identities
-    # per batch (default 24/4=6). Fewer IDs will cause the sampler to hang.
+    # per batch (paper default 16/4=4). Fewer IDs will cause the sampler to hang.
     min_ids = int(args.batch_size) // 4  # NUM_INSTANCE = 4
     if 0 < num_classes < min_ids:
         raise ValueError(
@@ -287,7 +340,7 @@ def setup_cfg(args):
     
     # Head
     cfg.MODEL.HEADS.NAME = "EmbeddingHead"
-    cfg.MODEL.HEADS.NUM_CLASSES = num_classes if num_classes > 0 else 250
+    cfg.MODEL.HEADS.NUM_CLASSES = num_classes
     cfg.MODEL.HEADS.EMBEDDING_DIM = 0   # keep the original 2048-dimensional head
     cfg.MODEL.HEADS.NORM = "BN"
     cfg.MODEL.HEADS.POOL_LAYER = "GlobalAvgPool"
@@ -338,9 +391,9 @@ def setup_cfg(args):
     cfg.SOLVER.IMS_PER_BATCH = int(args.batch_size)
     
     cfg.SOLVER.SCHED = "MultiStepLR"
-    # LR milestones: default keeps the validated 150-epoch schedule; other epoch
-    # budgets scale milestones to ~0.5 and ~0.83 of the run so decay stays inside
-    # training (60 epochs -> [30, 50], matching configs/simveri_resnet50_ibn.yml).
+    # LR milestones: the paper default is 60 epochs with steps [30, 50]. The
+    # legacy 150-epoch transfer setting keeps [60, 100, 130]. Other explicit
+    # epoch budgets scale milestones to approximately 0.5 and 0.83 of the run.
     if int(args.epochs) == 150:
         cfg.SOLVER.STEPS = [60, 100, 130]
     else:
@@ -460,6 +513,7 @@ def main():
     print("=" * 70)
     print(f"\nConfiguration summary:")
     print(f"  Dataset: {args.dataset_name}")
+    print(f"  Source config: {os.path.abspath(args.config_file) if args.config_file else 'FastReID defaults'}")
     print(f"  Model: ResNet-50-IBN")
     print(f"  Number of classes: {cfg.MODEL.HEADS.NUM_CLASSES}")
     print(f"  Losses: {', '.join(cfg.MODEL.LOSSES.NAME)}")
@@ -480,6 +534,10 @@ def main():
     print(f"  Warmup: {cfg.SOLVER.WARMUP_ITERS} iters")
     print(f"  Output directory: {cfg.OUTPUT_DIR}")
     print("=" * 70)
+
+    if args.config_only:
+        print(f"[config-only] Resolved configuration written to: {cfg_path}")
+        return
 
     trainer = DefaultTrainer(cfg)
     trainer.resume_or_load(resume=args.resume)

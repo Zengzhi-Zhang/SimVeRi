@@ -4,13 +4,15 @@ Reference implementation for generating the SimVeRi dataset, assembling the publ
 
 ## Official Project Title
 
-SimVeRi: a synthetic dataset for vehicle re-identification with spatiotemporal annotations and air-ground viewpoints
+SimVeRi: a synthetic vehicle re-identification dataset with spatiotemporal metadata and aerial–ground views
 
 ## Release Metadata
 
 - Code repository: <https://github.com/Zengzhi-Zhang/SimVeRi>
-- Code archive DOI: <https://doi.org/10.5281/zenodo.19207143>
-- Dataset DOI: <https://doi.org/10.5281/zenodo.21037242>
+- Code version DOI (v2.1.0): <https://doi.org/10.5281/zenodo.21980102>
+- Code concept DOI (all versions): <https://doi.org/10.5281/zenodo.19207142>
+- Associated dataset version DOI (v1.2): <https://doi.org/10.5281/zenodo.21980379>
+- Dataset concept DOI (all versions): <https://doi.org/10.5281/zenodo.19207202>
 - Code license: `MIT License`
 - Dataset license: `CC BY 4.0`
 - Corresponding author: Gang Ren (<rengang@seu.edu.cn>)
@@ -24,6 +26,14 @@ This repository provides the code used to construct the SimVeRi dataset and to r
 - technical validation for ReID, trajectory reconstruction, and air-ground characterization.
 
 The released dataset is distributed separately through Zenodo. This repository contains the software needed to regenerate or inspect the corresponding processing and validation steps.
+
+### Combining Dataset Components Safely
+
+When using more than one released dataset component, identify images by their resource-qualified relative paths rather than by filename basename alone. Basenames are not globally unique across the complete release, and flattening the component directories can overwrite colliding files. The dataset archive provides `statistics/image_manifest.csv` as the release-wide image index.
+
+### Licence-Plate Handling
+
+The generation code uses the fixed licence-plate textures supplied with the native CARLA vehicle assets. It does not assign vehicle-specific registration strings or randomise, blur, or mask plate textures. A structured audit covering all 25 released vehicle blueprints found that every legible sampled plate displayed the placeholder text `CARLA`; no identity-specific plate text was observed. Plate-region pixels remain part of the vehicle image and may still contribute blueprint-level appearance.
 
 ## Repository Layout
 
@@ -47,6 +57,10 @@ SimVeRi/
   sumo/
   sumo_integration/
   simveri_validation/
+    configs/
+      simveri_r50_ibn_paper.yaml
+    scripts/
+      train_baseline.py
 ```
 
 ## Main Components
@@ -55,7 +69,7 @@ SimVeRi/
 - `run_simveri.py`: launches synchronized CARLA-SUMO co-simulation and records raw vehicle crops plus metadata.
 - `simveri_collector.py`, `bbox_utils.py`, `occlusion.py`, `config_loader.py`: capture-time helpers for image extraction and metadata export.
 - `clean_and_split.py`: filters raw captures using explicit geometric and visibility rules and produces cleaned intermediate outputs.
-- `generate_simveri_release.py`: assembles the benchmark-ready release bundle, including the main ground-ground benchmark and air-ground protocol assets.
+- `generate_simveri_release.py`: assembles the benchmark-ready release bundle, including the core non-air roadside benchmark and air-ground protocol assets.
 - `export_twins_extras.py`: exports the Twins subset as a separate supplement under `extras/twins/`.
 - `simveri_validation/`: validation scripts for baseline ReID, air-ground analysis, and trajectory-reconstruction experiments.
 
@@ -127,7 +141,7 @@ python generate_simveri_release.py ^
 
 This script builds:
 
-- the primary ground-ground benchmark;
+- the core non-air roadside benchmark;
 - metadata and statistics files;
 - `ag_protocol/`; and
 - `ag_protocol_full/`.
@@ -144,14 +158,24 @@ The Twins subset is kept separate on purpose so standard ReID benchmarking is no
 
 The `simveri_validation/` directory is part of the public release and should be kept. In particular, `simveri_validation/src/tech_validation_tr/` is the shared helper layer for the trajectory-reconstruction validation scripts reported in the paper.
 
+The authoritative paper-baseline configuration is `simveri_validation/configs/simveri_r50_ibn_paper.yaml`. It is self-contained, contains no local absolute paths, and records the settings used for the reported ResNet-50-IBN result. The root-level `config.yaml` is the CARLA-SUMO data-generation configuration and is not a model-training configuration. The legacy filenames `GG_clean_config.yaml` and `simveri_resnet50_ibn.yml` are retained as compatibility aliases to the authoritative file.
+
 Typical validation workflows are:
 
 - baseline ReID:
 
 ```bash
-python simveri_validation/scripts/train_baseline.py --dataset-root <release_root> --output-dir <model_dir>
-python simveri_validation/scripts/extract_features.py --data-root <release_root> --model-path <model_dir>\model_final.pth --output-dir <features_dir>
+python simveri_validation/scripts/train_baseline.py --dataset-root <release_root> --config-file simveri_validation/configs/simveri_r50_ibn_paper.yaml --weights none --input-size 256 --batch-size 16 --epochs 60 --output-dir <model_dir>
+python simveri_validation/scripts/extract_features.py --data-root <release_root> --model-path <model_dir>/model_final.pth --input-size 256 --output-dir <features_dir>
 python simveri_validation/scripts/evaluate_baseline.py --features-dir <features_dir> --data-root <release_root> --output-dir <results_dir>
+```
+
+The training command defaults to the same values shown above. With `--weights none`, FastReID initialises the ResNet-50-IBN backbone from its ImageNet-pretrained weights and does not load a vehicle-ReID checkpoint. The resolved runtime configuration is written to `<model_dir>/config.yaml` before training starts.
+
+To verify paths and the resolved settings without starting GPU training, run:
+
+```bash
+python simveri_validation/scripts/train_baseline.py --dataset-root <release_root> --output-dir <model_dir> --config-only
 ```
 
 - air-ground characterization:
@@ -175,19 +199,21 @@ The later trajectory-validation steps are intentionally script-based rather than
 
 ## Citation
 
-If you use this codebase, please cite the code archive:
+If you use this codebase, please cite the exact software version used. For version 2.1.0, the preferred citation is:
 
-- Zhang, Z., Cao, Q., Deng, Y., Zhang, M., Wu, C. and Ren, G. SimVeRi code. Zenodo. <https://doi.org/10.5281/zenodo.19207143>
+- Zhang, Z., Cao, Q., Deng, Y., Zhang, M., Wu, C., Ren, G. and Shi, X. SimVeRi code. Version 2.1.0. Zenodo. <https://doi.org/10.5281/zenodo.21980102>
+
+The code concept DOI <https://doi.org/10.5281/zenodo.19207142> is the persistent entry point for all software versions and resolves to the latest published version.
 
 If you use the released dataset, please also cite:
 
-- Zhang, Z., Cao, Q., Deng, Y., Zhang, M., Wu, C. and Ren, G. SimVeRi: a synthetic dataset for vehicle re-identification with spatiotemporal annotations and air-ground viewpoints. Zenodo. <https://doi.org/10.5281/zenodo.19207203>
+- Zhang, Z., Cao, Q., Deng, Y., Zhang, M., Wu, C., Ren, G. and Shi, X. SimVeRi: a synthetic vehicle re-identification dataset with spatiotemporal metadata and aerial–ground views. Version 1.2. Zenodo. <https://doi.org/10.5281/zenodo.21980379>
 
-A machine-readable citation record for the software release is provided in `CITATION.cff`.
+The dataset concept DOI <https://doi.org/10.5281/zenodo.19207202> is the persistent entry point for all dataset versions. A machine-readable citation record for the software release is provided in `CITATION.cff`.
 
 ## Authors
 
-All authors are affiliated with the Jiangsu Province Collaborative Innovation Center of Modern Urban Traffic Technologies, School of Transportation, Southeast University.
+All authors are affiliated with the Jiangsu Key Laboratory of Intelligent Transportation Technology, School of Transportation, Southeast University, Nanjing, China. Qi Cao is additionally affiliated with the Department of Civil and Environmental Engineering, National University of Singapore, Singapore.
 
 1. Zengzhi Zhang (<zhangzengzhi512@seu.edu.cn>)
 2. Qi Cao (<cao_qi@seu.edu.cn>)
@@ -195,6 +221,7 @@ All authors are affiliated with the Jiangsu Province Collaborative Innovation Ce
 4. Mengyao Zhang (<zmyao0829@126.com>)
 5. Changjian Wu (<changjian12@126.com>)
 6. Gang Ren (<rengang@seu.edu.cn>, corresponding author)
+7. Xinyu Shi (<shixinyu0915@yeah.net>)
 
 ## Funding
 

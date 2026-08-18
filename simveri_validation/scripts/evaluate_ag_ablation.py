@@ -2,7 +2,6 @@
 """
 AG spatiotemporal ablation evaluator for the SimVeRi release.
 
-This script intentionally lives outside E:\\SimVeRi_release for sandboxed runs.
 It reads the released AG protocol metadata, evaluates the requested late-fusion
 ablation modes, and reuses the CMC/AP metric semantics from
 SimVeRi-code/simveri_validation/scripts/evaluate_ag_protocol.py.
@@ -16,11 +15,18 @@ import argparse
 import json
 import math
 import os
+import sys
 import tempfile
 from datetime import datetime
 from typing import Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
 
 import numpy as np
+
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, PROJECT_ROOT)
+
+from src.path_utils import get_default_simveri_root
 
 
 TrackletMap = Dict[str, dict]
@@ -670,7 +676,9 @@ def evaluate_release(args: argparse.Namespace) -> dict:
 
 
 def parse_args() -> argparse.Namespace:
-    default_ag_root = r"E:\SimVeRi_release\SimVeRi-dataset-v2.0\annotations_and_protocols\ag_protocol"
+    default_ag_root = os.path.join(
+        get_default_simveri_root(), "annotations_and_protocols", "ag_protocol"
+    )
     default_out = os.path.join(tempfile.gettempdir(), "ag_ablation_selftest")
     parser = argparse.ArgumentParser(description="Evaluate AG visual/ST ablations on the released SimVeRi protocol")
     parser.add_argument("--ag-root", default=default_ag_root, help="Path to annotations_and_protocols/ag_protocol")
